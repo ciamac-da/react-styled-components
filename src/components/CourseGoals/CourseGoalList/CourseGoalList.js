@@ -1,11 +1,19 @@
 import React from 'react';
-
 import CourseGoalItem from '../CourseGoalItem/CourseGoalItem';
-import './CourseGoalList.css';
+import styled from 'styled-components';
+
+const UL = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+`
+
+
 
 const CourseGoalList = props => {
   return (
-    <ul className="goal-list">
+    <UL>
       {props.items.map(goal => (
         <CourseGoalItem
           key={goal.id}
@@ -15,7 +23,7 @@ const CourseGoalList = props => {
           {goal.text}
         </CourseGoalItem>
       ))}
-    </ul>
+    </UL>
   );
 };
 
